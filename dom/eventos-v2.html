@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <h2>{{contador}}</h2>
+        <button v-on:click="somar()">Somar 1</button>
+        <p v-on:mousemove="atualizarXY">Mouse: {{ x }} e {{ y }}.</p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                contador: 0,
+                x: 0,
+                y: 0
+            },
+            methods: {
+                somar: function() {
+                    this.contador++;
+                },
+                atualizarXY: function(e){
+                    this.x = e.clientX;
+                    this.y = e.clientY;
+                }
+            }
+        })
+    </script>
+</body>
+</html>
