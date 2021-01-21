@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <ul>
+            <li v-for="(cor, i) in cores">{{ i + 1 }}) {{ cor }}</li>
+        </ul>
+        <hr>
+        <template v-for="(cor, i) in cores">
+            {{ i + 1 }} {{ cor }}
+        </template>
+        <hr>
+        <ul>
+            <li v-for="(pessoa, i) in pessoas">
+                <span v-for="(valor, chave) in pessoa">{{ chave }}: {{ valor }} </span>
+            </li>
+        </ul>
+        <hr>
+        <div v-for="n in 10">{{ n }}</div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                cores: ['vermelho', 'verde', 'amarelo', 'azul'],
+                pessoas: [
+                    { nome: 'Ana', idade: 26, peso: 59 },
+                    { nome: 'Guilherme', idade: 22, peso: 85 },
+                ]
+            }
+        });
+    </script>
+</body>
+</html>
